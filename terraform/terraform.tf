@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
     bucket         = "my-terraform-state-bucket"
     key            = "terraform/state.tfstate"
-    region         = "ap-southeast-1"
+    region         = "us-east-1"
     encrypt        = true
     dynamodb_table = "terraform-lock"
   }
@@ -39,7 +39,7 @@ terraform {
 
 provider "aws" {
   region = var.region
-  
+
   default_tags {
     tags = {
       Environment = var.environment

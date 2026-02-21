@@ -8,7 +8,7 @@ variable "environment" {
 variable "region" {
   description = "AWS region for deployment"
   type        = string
-  default     = "ap-southeast-1"
+  default     = "us-east-1"
 }
 
 variable "kubeconfig_path" {
