@@ -5,7 +5,7 @@ FROM node:18-alpine AS dev-builder
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package-*.json ./
 
 # Install all dependencies for development
 RUN npm ci && npm cache clean --force
@@ -47,7 +47,7 @@ FROM node:18-alpine AS prod-builder
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package-*.json ./
 
 RUN npm ci --only=production && npm cache clean --force
 
