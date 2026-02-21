@@ -8,7 +8,8 @@ WORKDIR /app
 COPY package-*.json ./
 
 # Install all dependencies for development
-RUN npm ci && npm cache clean --force
+RUN npm ci --only=development && npm cache clean --force
+
 
 COPY . .
 
